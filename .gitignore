@@ -1,0 +1,27 @@
+.venv/
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.DS_Store
+.idea/
+.vscode/
+dist/
+build/
+*.egg-info/
+
+# Local experiment inputs and generated compression artifacts.
+input.txt
+recovered*.txt
+out_dir*/
+compressed.bin
+header.bin
+metadata*.json
+benchmark_lengths.*
+traditional.*
+*.zst

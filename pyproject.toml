@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-arithmetic-compressor"
+version = "0.1.0"
+description = "Lossless text compression with local LLM next-token distributions and integer arithmetic coding."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Chen Zeyuan" }]
+keywords = ["compression", "arithmetic-coding", "llm", "qwen", "mamba"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: System :: Archiving :: Compression",
+]
+dependencies = [
+  "numpy>=1.24",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+hf = [
+  "torch>=2.2",
+  "transformers>=4.41",
+]
+zstd = ["zstandard>=0.22"]
+
+[project.scripts]
+llm-compress = "llm_arithmetic_compressor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
