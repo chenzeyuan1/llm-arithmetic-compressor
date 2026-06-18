@@ -18,6 +18,22 @@ decodes the exact original token sequence.
 The stream is lossless only when decompression uses the same model, tokenizer,
 revision, quantization parameters, and effective inference behavior.
 
+## Acknowledgement
+
+After implementing this project, I found that the core idea is closely aligned
+with the LLMZip paper:
+
+> Chandra Shekhara Kaushik Valmeekam, Krishna Narayanan, Dileep Kalathil,
+> Jean-Francois Chamberland, and Srinivas Shakkottai. "LLMZip: Lossless Text
+> Compression using Large Language Models." arXiv:2306.04050v2, 2023.
+
+This project independently explores the same general direction: using a large
+language model as a deterministic next-token probability estimator and combining
+that distribution with a lossless entropy coder. I cite LLMZip here to
+acknowledge the prior work and to make the relationship explicit.
+
+Paper: <https://arxiv.org/abs/2306.04050v2>
+
 ## Install
 
 Python 3.11 or newer is recommended.

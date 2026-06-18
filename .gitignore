@@ -11,6 +11,7 @@ htmlcov/
 .DS_Store
 .idea/
 .vscode/
+publish.sh
 dist/
 build/
 *.egg-info/
